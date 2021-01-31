@@ -13,7 +13,8 @@
         android:id="@+id/tvMyName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_geekbrains" />
+        android:text="@string/hello_geekbrains"
+        android:textColor="@color/purple_500"/>
 
     <EditText
         android:id="@+id/etName"
