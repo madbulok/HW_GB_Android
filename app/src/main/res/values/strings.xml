@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">HW_GB_Android</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Первый экран</string>
+    <string name="second_fragment_label">Второй экран</string>
+
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="input_name">Ваше имя</string>
+    <string name="input_phone">Введите телефон</string>
+    <string name="input_pass">Введите пароль</string>
+    <string name="input_number">Введите число</string>
+    <string name="input_mail">Введите email</string>
+    <string name="toSecondActivity">Продолжить</string>
+    <string name="hello_geekbrains">Hello, Geekbrains!</string>
+    <string name="toSecond">Перейти на 2 экран</string>
+    <string name="enable_any">Включить что-то</string>
+</resources>
