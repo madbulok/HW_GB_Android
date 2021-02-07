@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class FirstActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView previewCalculation;
-    private final StringBuilder operationsCalculator = new StringBuilder();
+    private final StringBuilder historyCalc = new StringBuilder();
 
     @Override
     protected void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
@@ -40,85 +40,141 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        initCalculatorListener(v);
+        initCalculatorNumListener(v);
+        initCalculatorOperandListener(v);
+
     }
 
-    private void initCalculatorListener(View v) {
+    private void initCalculatorNumListener(View v) {
         switch (v.getId()){
             case(R.id.button1):
-                operationsCalculator.append(getString(R.string._1));
-                previewCalculation.setText(operationsCalculator.toString());
+                historyCalc.append(getString(R.string._1));
+                previewCalculation.setText(historyCalc.toString());
                 break;
             case(R.id.button2):
-                operationsCalculator.append(getString(R.string._2));
-                previewCalculation.setText(operationsCalculator.toString());
+                historyCalc.append(getString(R.string._2));
+                previewCalculation.setText(historyCalc.toString());
                 break;
             case(R.id.button3):
-                operationsCalculator.append(getString(R.string._3));
-                previewCalculation.setText(operationsCalculator.toString());
+                historyCalc.append(getString(R.string._3));
+                previewCalculation.setText(historyCalc.toString());
                 break;
             case(R.id.button4):
-                operationsCalculator.append(getString(R.string._4));
-                previewCalculation.setText(operationsCalculator.toString());
+                historyCalc.append(getString(R.string._4));
+                previewCalculation.setText(historyCalc.toString());
                 break;
             case(R.id.button5):
-                operationsCalculator.append(getString(R.string._5));
-                previewCalculation.setText(operationsCalculator.toString());
+                historyCalc.append(getString(R.string._5));
+                previewCalculation.setText(historyCalc.toString());
                 break;
             case(R.id.button6):
-                operationsCalculator.append(getString(R.string._6));
-                previewCalculation.setText(operationsCalculator.toString());
+                historyCalc.append(getString(R.string._6));
+                previewCalculation.setText(historyCalc.toString());
                 break;
             case(R.id.button7):
-                operationsCalculator.append(getString(R.string._7));
-                previewCalculation.setText(operationsCalculator.toString());
+                historyCalc.append(getString(R.string._7));
+                previewCalculation.setText(historyCalc.toString());
                 break;
             case(R.id.button8):
-                operationsCalculator.append(getString(R.string._8));
-                previewCalculation.setText(operationsCalculator.toString());
+                historyCalc.append(getString(R.string._8));
+                previewCalculation.setText(historyCalc.toString());
                 break;
             case(R.id.button9):
-                operationsCalculator.append(getString(R.string._9));
-                previewCalculation.setText(operationsCalculator.toString());
+                historyCalc.append(getString(R.string._9));
+                previewCalculation.setText(historyCalc.toString());
                 break;
             case(R.id.button0):
-                operationsCalculator.append(getString(R.string._0));
-                previewCalculation.setText(operationsCalculator.toString());
-                break;
-            case(R.id.button_backspace):
-                if (operationsCalculator.length() > 0){
-                    operationsCalculator.deleteCharAt(operationsCalculator.length()-1);
-                    previewCalculation.setText(operationsCalculator.toString());
-                }
-                break;
-            case(R.id.button_minus):
-                operationsCalculator.append("\n").append(getString(R.string.minus)).append("\n");
-                previewCalculation.setText(operationsCalculator.toString());
-                break;
-            case(R.id.button_multiply):
-                operationsCalculator.append("\n").append(getString(R.string.multiply_extended)).append("\n");
-                previewCalculation.setText(operationsCalculator.toString());
-                break;
-            case(R.id.button_point):
-                operationsCalculator.append(getString(R.string.point)).append("\n");
-                previewCalculation.setText(operationsCalculator.toString());
-                break;
-            case(R.id.button_plus):
-                operationsCalculator.append("\n").append(getString(R.string.plus)).append("\n");
-                previewCalculation.setText(operationsCalculator.toString());
-                break;
-            case(R.id.button_divider):
-                operationsCalculator.append("\n").append(getString(R.string._div)).append("\n");
-                previewCalculation.setText(operationsCalculator.toString());
-                break;
-            case(R.id.button_percent):
-                operationsCalculator.append("\n").append(getString(R.string.percent)).append("\n");
-                previewCalculation.setText(operationsCalculator.toString());
-                break;
-            case(R.id.button_clear):
-                operationsCalculator.delete(0, operationsCalculator.length());
-                previewCalculation.setText(operationsCalculator.toString());
+                historyCalc.append(getString(R.string._0));
+                previewCalculation.setText(historyCalc.toString());
                 break;
         }
+    }
+
+    private void initCalculatorOperandListener(View v) {
+        switch (v.getId()){
+            case(R.id.button_backspace):
+                if (isFirstInput()) break;
+                historyCalc.deleteCharAt(historyCalc.length()-1);
+                previewCalculation.setText(historyCalc.toString());
+
+                break;
+            case(R.id.button_minus):
+                if (isFirstInput()) break;
+                if (replaceLastIfOperator()){
+                    historyCalc.append(getString(R.string.minus)).append("\n");
+                } else {
+                    historyCalc.append("\n").append(getString(R.string.minus)).append("\n");
+                }
+                previewCalculation.setText(historyCalc.toString());
+                break;
+            case(R.id.button_multiply):
+                if (isFirstInput()) break;
+                if (replaceLastIfOperator()){
+                    historyCalc.append(getString(R.string.multiply_extended)).append("\n");
+                } else {
+                    historyCalc.append("\n").append(getString(R.string.multiply_extended)).append("\n");
+                }
+                previewCalculation.setText(historyCalc.toString());
+                break;
+            case(R.id.button_point):
+                if (isFirstInput()) break;
+                historyCalc.append(getString(R.string.point)).append("\n");
+                previewCalculation.setText(historyCalc.toString());
+                break;
+            case(R.id.button_plus):
+                if (isFirstInput()) break;
+                if (replaceLastIfOperator()){
+                    historyCalc.append(getString(R.string.plus)).append("\n");
+                } else {
+                    historyCalc.append("\n").append(getString(R.string.plus)).append("\n");
+                }
+                previewCalculation.setText(historyCalc.toString());
+                break;
+            case(R.id.button_divider):
+                if (isFirstInput()) break;
+                if (replaceLastIfOperator()){
+                    historyCalc.append(getString(R.string._div)).append("\n");
+                } else {
+                    historyCalc.append("\n").append(getString(R.string._div)).append("\n");
+                }
+                previewCalculation.setText(historyCalc.toString());
+                break;
+            case(R.id.button_percent):
+                if (isFirstInput()) break;
+                if (replaceLastIfOperator()){
+                    historyCalc.append(getString(R.string.percent)).append("\n");
+                } else {
+                    historyCalc.append("\n").append(getString(R.string.percent)).append("\n");
+                }
+                previewCalculation.setText(historyCalc.toString());
+                break;
+            case(R.id.button_clear):
+                if (isFirstInput()) break;
+                historyCalc.delete(0, historyCalc.length());
+                previewCalculation.setText(historyCalc.toString());
+                break;
+        }
+    }
+    private boolean isFirstInput(){
+        return previewCalculation.length() < 1 || historyCalc.length() < 1;
+    }
+
+    private boolean replaceLastIfOperator() {
+        boolean isNeedReplace = isLastOperand();
+        if (isNeedReplace){
+            historyCalc.delete(historyCalc.length()-3, historyCalc.length()-1);
+            previewCalculation.setText(historyCalc);
+        }
+         return isNeedReplace;
+    }
+
+    private boolean isLastOperand(){
+        int lastSymbol = historyCalc.length()-2;
+        if (lastSymbol < 0) return false;
+        return String.valueOf(historyCalc.charAt(lastSymbol)).equals(getString(R.string._div)) ||
+                String.valueOf(historyCalc.charAt(lastSymbol)).equals(getString(R.string.minus)) ||
+                String.valueOf(historyCalc.charAt(lastSymbol)).equals(getString(R.string.plus)) ||
+                String.valueOf(historyCalc.charAt(lastSymbol)).equals(getString(R.string.percent)) ||
+                String.valueOf(historyCalc.charAt(lastSymbol)).equals(getString(R.string.multiply_extended));
     }
 }
