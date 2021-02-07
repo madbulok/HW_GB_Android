@@ -115,7 +115,6 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
                 operationsCalculator.delete(0, operationsCalculator.length());
                 previewCalculation.setText(operationsCalculator.toString());
                 break;
-
         }
     }
 }
