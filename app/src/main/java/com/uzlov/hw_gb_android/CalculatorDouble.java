@@ -1,8 +1,6 @@
 package com.uzlov.hw_gb_android;
 
-import java.util.ArrayList;
-
-public class Calculator<T> implements Calculatable<Number> {
+public class CalculatorDouble implements Calculatable<Number> {
 
     @Override
     public Number plus(Number v1, Number v2) {

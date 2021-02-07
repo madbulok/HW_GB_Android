@@ -40,6 +40,10 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
+        initCalculatorListener(v);
+    }
+
+    private void initCalculatorListener(View v) {
         switch (v.getId()){
             case(R.id.button1):
                 operationsCalculator.append(getString(R.string._1));
