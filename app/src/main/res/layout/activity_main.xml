@@ -14,8 +14,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:text="@string/_1"
-        android:textSize="@dimen/fontCalculatorSize"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/button2"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent" />
@@ -26,8 +24,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:text="@string/_2"
-        android:textSize="@dimen/fontCalculatorSize"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/button3"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toEndOf="@+id/button1" />
@@ -38,8 +34,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:text="@string/_3"
-        android:textSize="@dimen/fontCalculatorSize"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/button_multiply"
         app:layout_constraintEnd_toStartOf="@+id/button_multiply"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
@@ -50,8 +44,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:text="@string/_4"
-        android:textSize="@dimen/fontCalculatorSize"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/button5"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/button1" />
@@ -62,8 +54,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:text="@string/_5"
-        android:textSize="@dimen/fontCalculatorSize"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/button6"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline2" />
@@ -74,8 +64,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:text="@string/_6"
-        android:textSize="@dimen/fontCalculatorSize"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/button_minus"
         app:layout_constraintEnd_toStartOf="@+id/button_minus"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
@@ -86,8 +74,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:text="@string/_7"
-        android:textSize="@dimen/fontCalculatorSize"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/button8"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/button4" />
@@ -98,8 +84,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:text="@string/_8"
-        android:textSize="@dimen/fontCalculatorSize"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/button9"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline2" />
@@ -110,8 +94,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:text="@string/_9"
-        android:textSize="@dimen/fontCalculatorSize"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/button_plus"
         app:layout_constraintEnd_toStartOf="@+id/button_plus"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
@@ -129,8 +111,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:text="@string/_div"
-        android:textSize="@dimen/fontCalculatorSize"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/button_multiply"
         app:layout_constraintEnd_toEndOf="@+id/button_multiply"
         app:layout_constraintStart_toStartOf="@+id/button_multiply" />
@@ -140,7 +120,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:textSize="@dimen/fontCalculatorSize"
         app:icon="@drawable/ic_multiply"
         app:iconGravity="textStart"
         app:layout_constraintBottom_toTopOf="@+id/button_minus"
@@ -153,7 +132,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:text="@string/minus"
-        android:textSize="@dimen/fontCalculatorSize"
         app:layout_constraintBottom_toTopOf="@+id/button_plus"
         app:layout_constraintEnd_toEndOf="@+id/button_plus"
         app:layout_constraintStart_toStartOf="@+id/button_plus" />
@@ -164,7 +142,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:text="@string/plus"
-        android:textSize="@dimen/fontCalculatorSize"
         app:layout_constraintBottom_toTopOf="@+id/button_equals"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline3" />
@@ -175,7 +152,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:text="@string/percent"
-        android:textSize="@dimen/fontCalculatorSize"
         app:layout_constraintBottom_toBottomOf="@+id/button_divider"
         app:layout_constraintEnd_toStartOf="@+id/button_divider"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
@@ -199,8 +175,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:text="@string/clear"
-        android:textSize="@dimen/fontCalculatorSize"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/button_backspace"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent" />
@@ -226,7 +200,6 @@
         android:layout_marginBottom="2dp"
         android:background="@color/white"
         android:text="@string/equals"
-        android:textSize="@dimen/fontCalculatorSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
@@ -237,7 +210,6 @@
         android:layout_height="0dp"
         android:background="@color/white"
         android:text="@string/point"
-        android:textSize="@dimen/fontCalculatorSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button7"
         app:layout_constraintStart_toStartOf="parent"
@@ -267,8 +239,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:text="@string/_0"
-        android:textSize="@dimen/fontCalculatorSize"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/button_equals"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline2" />
