@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.uzlov.hw_gb_android">
 
     <application
@@ -8,21 +9,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HW_GB_Android">
+        android:theme="@style/Theme.DevelopersLife">
         <activity
             android:name=".FirstActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.HW_GB_Android.NoActionBar">
+            android:theme="@style/Theme.DevelopersLife.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".SecondActivity"
-            android:label="@string/second_fragment_label"
-            android:theme="@style/Theme.HW_GB_Android.NoActionBar">
         </activity>
     </application>
 
