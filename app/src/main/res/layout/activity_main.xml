@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FirstActivity">
+    tools:context=".ui.FirstActivity">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button1"
@@ -242,5 +242,16 @@
         app:layout_constraintBottom_toBottomOf="@+id/button_equals"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSettings"
+        android:layout_width="@dimen/size_btn_setting"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_padding_global"
+        app:icon="@drawable/ic_baseline_settings_24"
+        app:iconGravity="textStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cornerRadius="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

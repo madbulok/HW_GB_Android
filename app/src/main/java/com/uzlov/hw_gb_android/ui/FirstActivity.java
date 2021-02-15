@@ -1,25 +1,46 @@
-package com.uzlov.hw_gb_android;
+package com.uzlov.hw_gb_android.ui;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
-public class FirstActivity extends AppCompatActivity implements View.OnClickListener {
+import com.uzlov.hw_gb_android.R;
+
+import java.util.prefs.PreferenceChangeEvent;
+
+public class FirstActivity extends AppCompatActivity implements View.OnClickListener, SharedPreferences.OnSharedPreferenceChangeListener {
 
     private TextView previewCalculation;
     private final StringBuilder historyCalc = new StringBuilder();
+    private SharedPreferences settings;
+
 
     @Override
     protected void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        initSettings();
+
+        loadTheme();
+
         setContentView(R.layout.activity_main);
 
         initUI();
 
     }
+
+    private void initSettings() {
+        settings = PreferenceManager.getDefaultSharedPreferences(this);
+        settings.registerOnSharedPreferenceChangeListener(this);
+    }
+
 
     private void initUI(){
         // клавиатура
@@ -27,7 +48,7 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
                 R.id.button4, R.id.button5, R.id.button6, R.id.button7, R.id.button8,
                 R.id.button9, R.id.button0, R.id.button_backspace, R.id.button_minus, R.id.button_divider,
                 R.id.button_multiply, R.id.button_point, R.id.button_plus, R.id.button_percent,
-                R.id.button_clear
+                R.id.button_clear, R.id.btnSettings
         };
 
         for (int id : id_buttons) {
@@ -38,11 +59,28 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
         previewCalculation = findViewById(R.id.tvPreviewcalculation);
     }
 
+    private void loadTheme() {
+        String s = settings.getString(getString(R.string.ID_THEME),"0");
+        switch (s){
+            case("0"):
+                setTheme(R.style.Theme_DevelopersLife);
+                break;
+            case("1"):
+                setTheme(R.style.Theme_DevelopersLifeBlue);
+                break;
+            case("2"):
+                setTheme(R.style.Theme_DevelopersLifeRed);
+                break;
+            case("3"):
+                setTheme(R.style.Theme_DevelopersLifeGreen);
+                break;
+        }
+    }
+
     @Override
     public void onClick(View v) {
         initCalculatorNumListener(v);
         initCalculatorOperandListener(v);
-
     }
 
     private void initCalculatorNumListener(View v) {
@@ -153,8 +191,16 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
                 historyCalc.delete(0, historyCalc.length());
                 previewCalculation.setText(historyCalc.toString());
                 break;
+            case (R.id.btnSettings):
+                openSettingsActivity();
         }
     }
+
+    private void openSettingsActivity() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
     private boolean isFirstInput(){
         return previewCalculation.length() < 1 || historyCalc.length() < 1;
     }
@@ -176,5 +222,9 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
                 String.valueOf(historyCalc.charAt(lastSymbol)).equals(getString(R.string.plus)) ||
                 String.valueOf(historyCalc.charAt(lastSymbol)).equals(getString(R.string.percent)) ||
                 String.valueOf(historyCalc.charAt(lastSymbol)).equals(getString(R.string.multiply_extended));
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
     }
 }

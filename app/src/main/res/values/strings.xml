@@ -34,4 +34,8 @@
     <string name="point">.</string>
     <string name="_0">0</string>
     <string name="multiply_extended">x</string>
+    <string name="title_activity_settings">Настройки</string>
+
+    <string name="reply_select_theme">Выберите тему</string>
+    <string name="ID_THEME">theme_name</string>
 </resources>

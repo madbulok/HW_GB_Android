@@ -3,8 +3,8 @@
     <!-- Base application theme. -->
     <style name="Theme.DevelopersLife" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
 
-        <item name="colorPrimary">#E1BEE7</item>
-        <item name="colorAccent">#D1C4E9</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="colorOnSecondary">@color/black</item>
 
         <item name="android:textSize">@dimen/fontCalculatorSize</item>
@@ -25,4 +25,87 @@
     </style>
 
     <style name="Theme.DevelopersLife.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <!-- RED application theme. -->
+    <style name="Theme.DevelopersLifeRed" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary_red</item>
+        <item name="colorAccent">@color/colorAccent_red</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <item name="android:textSize">@dimen/fontCalculatorSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="backgroundTint">@color/white</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorAccent</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.DevelopersLifeRed.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.DevelopersLifeRed.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+    </style>
+
+    <style name="Theme.DevelopersLifeRed.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+    <!-- BLUE application theme. -->
+    <style name="Theme.DevelopersLifeBlue" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary_blue</item>
+        <item name="colorAccent">@color/colorAccent_blue</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <item name="android:textSize">@dimen/fontCalculatorSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="backgroundTint">@color/white</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorAccent</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.DevelopersLifeBlue.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.DevelopersLifeBlue.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+    </style>
+
+    <style name="Theme.DevelopersLifeBlue.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <!-- GREEN application theme. -->
+    <style name="Theme.DevelopersLifeGreen" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary_green</item>
+        <item name="colorAccent">@color/colorAccent_green</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <item name="android:textSize">@dimen/fontCalculatorSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="backgroundTint">@color/white</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorAccent</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.DevelopersLifeGreen.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.DevelopersLifeGreen.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+    </style>
+
+    <style name="Theme.DevelopersLifeGreen.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>
