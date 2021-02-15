@@ -3,15 +3,19 @@ package com.uzlov.hw_gb_android.ui;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
 
 import com.uzlov.hw_gb_android.R;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.prefs.PreferenceChangeEvent;
 
@@ -20,7 +24,8 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
     private TextView previewCalculation;
     private final StringBuilder historyCalc = new StringBuilder();
     private SharedPreferences settings;
-
+    private final String KEY = "PARAM";
+    private final String KEY_RESTORE = "FROM_PREVIEW";
 
     @Override
     protected void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
@@ -34,6 +39,10 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
 
         initUI();
 
+        Intent intent = getIntent();
+        if (intent.getExtras() != null){
+            previewCalculation.append(intent.getStringExtra(KEY));
+        }
     }
 
     private void initSettings() {
@@ -226,5 +235,24 @@ public class FirstActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull @NotNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(KEY_RESTORE, historyCalc.toString());
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull @NotNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        historyCalc.append(savedInstanceState.getString(KEY_RESTORE, ""));
+        previewCalculation.append(historyCalc);
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull @NotNull Bundle outState, @NonNull @NotNull PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
     }
 }
