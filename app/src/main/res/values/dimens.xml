@@ -1,4 +1,8 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="dimen_margin_global">16dp</dimen>
+    <dimen name="dimen_padding_global">6dp</dimen>
+    <dimen name="fontCalculatorSize">18sp</dimen>
+    <dimen name="fonst_size_result">40sp</dimen>
+    <dimen name="size_btn_setting">40dp</dimen>
 </resources>

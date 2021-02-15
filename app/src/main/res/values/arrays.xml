@@ -1,0 +1,16 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="reply_entries">
+        <item>Material pink</item>
+        <item>Material blue</item>
+        <item>Material red</item>
+        <item>Material green</item>
+    </string-array>
+
+    <string-array name="reply_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>
